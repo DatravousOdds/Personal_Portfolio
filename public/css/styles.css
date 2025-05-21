@@ -286,20 +286,126 @@ nav ul li a:hover {
 .projects-grid-container {
   grid-template-columns: 1fr 1fr 1fr;
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
   /* align-items: center; */
   justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0.5rem;
 }
 
 .project-wrapper {
   width: 100%;
-  max-width: 300px;
-  height: 300px;
-  border: 1px solid;
-  border-radius: 12;
+  /* max-width: 500px; */
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   overflow: hidden;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   box-shadow: var(--shadow-sm);
+  transition: 0.3s all;
+  cursor: pointer;
 }
+
+.project-type {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.project-type.web-development {
+  background-color: #009353;
+}
+
+.project-type.data-visualization {
+  background-color: var(--primary-color);
+}
+
+
+
+
+
+
+
+.project-wrapper:hover .project-image img {
+  transform: scale(1.05);
+  transition: 0.3s all;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.project-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.project-info .project-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.project-info .project-description {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.project-info .project-tech-stack {
+  display: flex;
+  gap: 0.5rem;
+  
+  flex-wrap: wrap;
+}
+
+.project-info .project-tech-stack span {
+  font-size: 0.875rem;
+  color: #666;
+  background-color: #f9fafb;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  background-color: #f3f4f6;
+  color: #000;
+  transition: 0.3s all;
+}
+
+.project-info .project-tech-stack span:hover {
+  background-color: #e5e7eb;
+  transform: scale(1.05);
+}
+
+
+
+.project-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+
 
 .filter-list {
   display: flex;
@@ -309,6 +415,11 @@ nav ul li a:hover {
   justify-content: center;
 }
 
+.filter-list li:hover {
+  background-color: rgba(78, 70, 229, 0.8);
+  transform: scale(1.05);
+}
+
 .filter-list li {
   background-color: var(--primary-color);
   color: #fff;
@@ -316,7 +427,44 @@ nav ul li a:hover {
   border-radius: 30px;
   cursor: pointer;
   font-weight: 500;
+  transition: 0.3s all;
 }
+
+
+/* Experience Section */
+
+.experience-content {
+  padding: 4rem 1rem;
+}
+
+.experience-timeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.experience-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.experience-item {
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-item-header {
+  
 
 @media (max-width: 768px) {
   .hero-upper .hero-image {
