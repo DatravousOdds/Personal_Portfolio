@@ -446,12 +446,13 @@ nav ul li a:hover {
 .experience-item-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   border-radius: 2rem;
   padding: 1rem;
   color: #fff;
   font-weight: 600;
+  width: 180px;
   background-color: var(--primary-color);
   box-shadow: var(--shadow-sm);
 }
@@ -459,11 +460,39 @@ nav ul li a:hover {
 .experience-item {
   display: flex ;
   flex-direction: column;
-  align-items: center;
+  padding: 1rem;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* border: 1px solid; */
+}
+
+.experience-wrapper {
+  /* border: 1px solid; */
+  margin-top: 1rem;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: var(--shadow-md);
+  background-color: #F9FAFB;
+  
+}
+
+.experience-container {
+  border: 1px solid;
+  display: flex;
+  gap: 1rem;
   justify-content: center;
 }
 
-.experience-item-header {
+.timeline-circle {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+  border-radius: 100px;
+}
+
+
+
+
   
 
 @media (max-width: 768px) {
