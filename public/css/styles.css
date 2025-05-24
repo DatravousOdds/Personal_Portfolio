@@ -640,6 +640,56 @@ nav ul li a:hover {
   border-radius: 1px;
 }
 
+
+/* Contact Modal */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  padding: 1rem;
+  max-width: 90vw;
+  min-height: 90vh;
+  overflow-y: auto;
+}
+.modal-content {
+  min-width: 500px;
+  min-height: 400px;
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  /* align-items: center; */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 768px) {
   .hero-upper .hero-image {
     margin-top: 1rem;
