@@ -649,8 +649,8 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   background: rgb(0 0 0 / 80%);
   backdrop-filter: blur(12px);
@@ -685,6 +685,8 @@ nav ul li a:hover {
   justify-content: space-between;
   margin-bottom: 1rem;
   align-items: center;
+  font-size: 1.2rem;
+  color: #6779e4;
 }
 
 .modal-close-btn {
@@ -698,23 +700,35 @@ nav ul li a:hover {
 
 .modal-close-btn i {
   font-size: 1.2rem;
+  color: #4a5568;
 }
 
 .modal-close-btn:hover {
   background-color: var(--primary-color);
   color: #fff;
 }
-
-.modal-close-btn:focus {
-  border: 2px solid #000;
+.modal-close-btn i:hover {
+  color: #fff;
 }
 
 .form-group input {
   width: 100%;
   padding: 0.875rem;
   border-radius: 6px;
-  border: 2px solid var(--primary-color);
-  background: var(--secondary-color);
+  border: 2px solid #e2e8f0;
+  margin-top: 0.5rem;
+  transition: border 0.3s ease-in;
+}
+
+.form-group input.error {
+  border: 2px solid red;
+  box-shadow: 0 0 4px rgba(229, 70, 70, 0.8);
+  background: rgba(229, 62, 62, 0.05);
+}
+
+.invalid {
+  color: red;
+  font-size: 12px;
 }
 
 .form-group textarea {
@@ -723,7 +737,8 @@ nav ul li a:hover {
   resize: vertical;
   padding: 0.5rem;
   border-radius: 6px;
-  border: 2px solid var(--primary-color);
+  margin-top: 0.5rem;
+  border: 2px solid #e2e8f0;
 }
 
 .form-group textarea::placeholder {
@@ -736,9 +751,13 @@ nav ul li a:hover {
   font-family: var(--font-primary);
 }
 
-.form-group input:focus {
+.form-group input:focus,
+textarea:focus {
   box-shadow: 0 0 4px rgba(78, 70, 229, 0.8);
   outline: var(--primary-color);
+  border: 2px solid #6779e4;
+  transform: translateY(-4px);
+  transition: 0.5s ease;
 }
 
 .form-group {
@@ -746,8 +765,12 @@ nav ul li a:hover {
   margin: 1rem;
 }
 .form-group label {
-  font-size: 1.2rem;
   font-weight: 500;
+  color: #4a5568;
+}
+
+.form-group label i {
+  padding-right: 4px;
 }
 
 .form-group label .error-message {
@@ -759,7 +782,12 @@ nav ul li a:hover {
   padding: 1rem;
   border-radius: 6px;
   border: transparent;
-  background-color: var(--primary-color);
+  background: #4f46e5;
+  background: linear-gradient(
+    81deg,
+    rgba(79, 70, 229, 1) 43%,
+    rgba(90, 90, 232, 0.767) 100%
+  );
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -769,8 +797,28 @@ nav ul li a:hover {
   transition: background-color 0.3s ease-in-out;
 }
 
+.form-actions button:disabled {
+  cursor: dis;
+}
+
 .form-actions button:hover {
   background-color: #4f46e5c9;
+  box-shadow: 0 0 8px var(--primary-color);
+  transition: 0.3s all;
+  transform: translateY(-5px);
+}
+
+.textarea-info {
+  text-align: right;
+  font-size: 0.875rem;
+}
+
+.textarea-info.error {
+  color: red;
+}
+
+.required {
+  color: #ff0000;
 }
 
 @media (max-width: 768px) {

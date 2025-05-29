@@ -22,19 +22,19 @@
         </div>
         <div>
           <ul>
-            <li><a href="#hero">About Me</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="#skills">skills</a></li>
             <li><a href="#projects">projects</a></li>
             <li><a href="#experience">experience</a></li>
           </ul>
         </div>
         <div>
-          <button type="button" class="btn">CONTACT ME</button>
+          <button type="button" id="contact-btn" class="btn">CONTACT ME</button>
         </div>
       </nav>
 
       <!-- CONTACT MODAL-->
-      <div class="modal-overlay" id="contactModal" role="dialog" >
+      <div class="modal-overlay" id="contactModal" role="dialog">
         <div class="modal-container">
           <div class="modal-content">
             <!-- MODAL Header-->
@@ -49,7 +49,7 @@
               <div class="form-group">
                 <label for="name">
                   <i class="fas fa-user" aria-hidden="true"></i>
-                  Name *</label
+                  Name <span class="required">*</span></label
                 >
                 <input
                   type="text"
@@ -64,7 +64,7 @@
               <div class="form-group">
                 <label for="contact-email">
                   <i class="fas fa-envelope" aria-hidden="true"></i>
-                  Email *</label
+                  Email <span class="required">*</span></label
                 >
                 <input
                   required
@@ -73,12 +73,16 @@
                   autocomplete="email"
                   placeholder="your.email@example.com"
                 />
-                <span class="error-message" id="email-error" role="alert"></span>
+                <span
+                  class="error-message"
+                  id="email-error"
+                  role="alert"
+                ></span>
               </div>
               <div class="form-group">
                 <label for="contact-subject">
                   <i class="fas fa-tag" aria-hidden="true"></i>
-                  Subject *</label
+                  Subject <span class="required">*</span></label
                 >
                 <input
                   id="contact-subject"
@@ -97,7 +101,7 @@
               <div class="form-group">
                 <label for="message">
                   <i class="fas fa-comment" aria-hidden="true"></i>
-                  Message *</label
+                  Message <span class="required">*</span></label
                 >
                 <textarea
                   rows="5"
@@ -122,7 +126,6 @@
                 <button type="submit" class="primary-btn">Send Message</button>
               </div>
             </form>
-            
           </div>
         </div>
       </div>
@@ -595,7 +598,7 @@
       </div>
     </section>
     <!-- ABOUT ME SECTION-->
-    <section id="About">
+    <section id="about">
       <div class="about-content">
         <div class="about-header">
           <div class="header-icon">
