@@ -731,6 +731,11 @@ nav ul li a:hover {
   font-size: 12px;
 }
 
+.valid {
+  color: #009353;
+  font-size: 12px;
+}
+
 .form-group textarea {
   width: 100%;
   max-height: 200px;
