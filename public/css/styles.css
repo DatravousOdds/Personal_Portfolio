@@ -834,6 +834,11 @@ textarea:focus {
   color: #ff0000;
 }
 
+.primary-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .hero-upper .hero-image {
     margin-top: 1rem;
