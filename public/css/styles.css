@@ -656,6 +656,10 @@ nav ul li a:hover {
   backdrop-filter: blur(12px);
 }
 
+.invalidCount {
+  color: red;
+}
+
 .modal-overlay.show {
   opacity: 1;
   visibility: visible;
@@ -837,6 +841,79 @@ textarea:focus {
 .primary-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+
+.btn-text {
+  transition: opacity 0.3s ease-out;
+}
+
+.loading .btn-text {
+  opacity: 0;
+}
+
+.loading .loading-spinner {
+  opacity: 1;
+}
+
+/* Loading Spinner */
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  opacity: 0;
+}
+
+/* Suceess state */
+.success-state {
+  text-align: center;
+  display: none;
+}
+
+.success-state.show {
+  display: block;
+}
+
+.success-title {
+  font: 24px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 12px;
+}
+
+.success-text {
+  color: #718096;
+  margin-bottom: 25px;
+}
+
+.reset-btn {
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  background: linear-gradient(
+    81deg,
+    rgba(79, 70, 229, 1) 43%,
+    rgba(90, 90, 232, 0.767) 100%
+  );
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) (0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @media (max-width: 768px) {

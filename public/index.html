@@ -16,9 +16,7 @@
     <header>
       <nav>
         <div>
-          <a href="/home">
-            <img src="" alt="LOGO" />
-          </a>
+          <a href="/home"> DO </a>
         </div>
         <div>
           <ul>
@@ -123,11 +121,25 @@
               </div>
               <!-- Form Actions-->
               <div class="form-actions">
-                <button type="submit" class="primary-btn">Send Message</button>
+                <button type="submit" class="primary-btn" id="submitBtn">
+                  <div class="loading-spinner"></div>
+                  <span class="btn-text">Send Message</span>
+                </button>
               </div>
             </form>
           </div>
         </div>
+      </div>
+
+      <div class="success-state" id="sucessState">
+        <div class="success-title">Message Sent!</div>
+        <h3 class="success-icons"><i class="fa-solid fa-check"></i></h3>
+        <p class="success-text">
+          Thank you for reaching out. I'll get back to you as soon as possible
+        </p>
+        <button class="reset-btn" onclick="resetForm()">
+          Send Another Message
+        </button>
       </div>
     </header>
     <!-- HERO SECTION-->
@@ -289,7 +301,9 @@
         <div class="project-filters">
           <ul class="filter-list">
             <li>ALL</li>
-            <li>WEB</li>
+            <li>WEB APPS</li>
+            <li>DASHBOARDS</li>
+            <li>DATA VIZ</li>
             <li>PYTHON</li>
           </ul>
         </div>
