@@ -1,6 +1,9 @@
 // Contact Modal Functionality
 const contactBtn = document.getElementById("contact-btn");
 const modalCloseBtn = document.querySelector(".modal-close-btn");
+const charCount = document.querySelector(".char-count");
+
+console.log("characters", charCount);
 
 // Feature Filters Functionality
 const filterList = document.querySelector(".filter-list");
@@ -24,9 +27,9 @@ const formErrors = {
 
 const successMessage = {
   name: "Looks good!",
-  email: "Valid",
-  subject: document.getElementById("subject-error"),
-  message: document.getElementById("message-error"),
+  email: "Valid!",
+  subject: "Looks good!",
+  message: "That's enough!",
 };
 
 validators = {
@@ -63,6 +66,8 @@ keys.forEach((key) => {
       formErrors[key].textContent = error;
     } else {
       formErrors[key].classList.add("valid");
+      formErrors[key].classList.remove("invalid");
+      formInput[key].classList.remove("error");
       formErrors[key].textContent = successMessage[key];
     }
   });
@@ -76,16 +81,3 @@ modalCloseBtn.addEventListener("click", () => {
   modalOverlay.classList.remove("show");
   document.body.style.overflow = "scroll";
 });
-
-// Testing
-// console.log(contactBtn);
-// console.log(filterList);
-// console.log(contactModal);
-// console.log(formInput.name);
-// console.log(formInput.email);
-// console.log(formInput.subject);
-// console.log(formInput.message);
-// console.log(formErrors.name);
-// console.log(formErrors.email);
-// console.log(formErrors.subject);
-// console.log(formErrors.message);

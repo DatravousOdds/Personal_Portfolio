@@ -746,6 +746,12 @@ nav ul li a:hover {
   border: 2px solid #e2e8f0;
 }
 
+.form-group textarea.error {
+  border: 2px solid red;
+  box-shadow: 0 0 4px rgba(229, 70, 70, 0.8);
+  background: rgba(229, 62, 62, 0.05);
+}
+
 .form-group textarea::placeholder {
   font-size: 1rem;
   font-family: var(--font-primary);
@@ -814,7 +820,9 @@ textarea:focus {
 }
 
 .textarea-info {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 0.875rem;
 }
 
