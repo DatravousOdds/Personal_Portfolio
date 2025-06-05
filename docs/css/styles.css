@@ -217,6 +217,7 @@ nav ul li a:hover {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .reset-btn {
   padding: 1rem;
   border-radius: 8px;
@@ -291,10 +292,15 @@ nav ul li a:hover {
   0% {
     transform: translate(-50%, -50%) (0deg);
 =======
+=======
+>>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
+<<<<<<< HEAD
+>>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
+=======
 >>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
   }
   to {
@@ -334,6 +340,7 @@ nav ul li a:hover {
 
 @media (max-width: 768px) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   .small-screen-navigation {
     display: block;
   }
@@ -356,6 +363,10 @@ nav ul li a:hover {
   .hero-content {
     padding: 2rem 1rem;
 >>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
+=======
+  .hero-content {
+    padding: 2rem 1rem;
+>>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
   }
 
   .stats-container {
@@ -372,8 +383,12 @@ nav ul li a:hover {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @media (max-width: 390px) {
 }
+=======
+/* Rest of your existing CSS remains unchanged */
+>>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
 =======
 /* Rest of your existing CSS remains unchanged */
 >>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
