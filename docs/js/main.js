@@ -179,7 +179,7 @@ const projects = [
   },
   {
     id: 5,
-    title: "",
+    title: "Python Project",
     category: "python",
     technologies: ["html", "css", "javascript"],
     type: "",
@@ -188,10 +188,10 @@ const projects = [
   },
   {
     id: 6,
-    title: "",
+    title: "Data Visualization",
     category: "data-viz",
     technologies: ["html", "css", "javascript"],
-    type: "",
+    type: "Data Visualization",
     image: "./images/dashboardProject.jpg",
     description: ""
   }
@@ -227,13 +227,19 @@ function createCard(project) {
 }
 
 function displayProjects(projectsToShow) {
-  gridContainer.textContent = "";
-  projectsToShow.forEach((project) =>
-    gridContainer.appendChild(createCard(project))
-  );
+  // fade out current projects
+  gridContainer.style.opacity = "0";
+  setTimeout(() => {
+    gridContainer.innerHTML = "";
+    projectsToShow.forEach((project) => {
+      const projectCard = createCard(project);
+      gridContainer.appendChild(projectCard);
+    });
+    gridContainer.style.opacity = "1";
+  }, 500);
 }
 
-displayProjects(projects);
+// displayProjects(projects);
 
 // Featuer project filter
 
