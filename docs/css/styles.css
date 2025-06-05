@@ -907,6 +907,62 @@ textarea:focus {
   cursor: pointer;
 }
 
+.logo a {
+  text-decoration: none;
+  letter-spacing: 1;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.small-screen-navigation {
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+
+.small-nav {
+  position: fixed;
+  background-color: #fff;
+  top: 4rem;
+  right: 0;
+  left: 0;
+  /* padding: 1rem; */
+  box-shadow: var(--shadow-md);
+}
+
+.small-nav ul {
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+  list-style: none;justify-content: center;
+}
+
+.small-nav ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #000;
+  font-weight: 600;
+
+}
+
+.small-nav ul li a:hover {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.small-nav ul li {
+  /* border: 1px solid; */
+  padding: 1rem;
+  transition: 0.3s ease;
+}
+
+.small-nav ul li:hover {
+  background: #efeffe;
+  width: 100%;
+  color: var(--primary-color);
+}
+
 @keyframes spin {
   0% {
     transform: translate(-50%, -50%) (0deg);
@@ -917,6 +973,17 @@ textarea:focus {
 }
 
 @media (max-width: 768px) {
+  .small-screen-navigation {
+    display: block;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+
+  nav ul {
+    display: none;
+  }
   .hero-upper .hero-image {
     margin-top: 1rem;
     max-width: 200px;
@@ -930,4 +997,7 @@ textarea:focus {
     grid-template-columns: 1fr 1fr;
     display: grid;
   }
+}
+
+@media (max-width: 390px) {
 }
