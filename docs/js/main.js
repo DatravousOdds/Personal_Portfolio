@@ -11,6 +11,18 @@ const messageInput = document.getElementById("contact-message");
 // Form Validation
 const modalOverlay = document.querySelector(".modal-overlay");
 const gridContainer = document.querySelector(".projects-grid-container");
+const smallMenuBtn = document.querySelector(".small-screen-icon");
+const smallScreenMenu = document.querySelector(".small-nav");
+
+smallMenuBtn.addEventListener("click", () => {
+  if (smallScreenMenu.classList.contains("active")) {
+    console.log("has the active class");
+    smallScreenMenu.classList.remove("active");
+  } else {
+    console.log("does not have the active class");
+    smallScreenMenu.classList.add("active");
+  }
+});
 
 contactBtn.addEventListener("click", () => {
   modalOverlay.classList.add("show");
@@ -37,21 +49,21 @@ const formInput = {
   name: document.getElementById("contact-name"),
   email: document.getElementById("contact-email"),
   subject: document.getElementById("contact-subject"),
-  message: document.getElementById("contact-message")
+  message: document.getElementById("contact-message"),
 };
 
 const formErrors = {
   name: document.getElementById("name-error"),
   email: document.getElementById("email-error"),
   subject: document.getElementById("subject-error"),
-  message: document.getElementById("message-error")
+  message: document.getElementById("message-error"),
 };
 
 const successMessage = {
   name: "Looks good!",
   email: "Valid!",
   subject: "Looks good!",
-  message: "That's enough!"
+  message: "That's enough!",
 };
 
 validators = {
@@ -75,7 +87,7 @@ validators = {
     if (value.length < 10) return "Message must be at lease 10 characters";
     if (value.length > 1000) return "Message must be less than 1000 characters";
     return null;
-  }
+  },
 };
 
 const keys = Object.keys(formInput);
@@ -148,7 +160,7 @@ const projects = [
     technologies: ["tableau", "power bi", "javascript"],
     type: "Data Visualization",
     image: "./images/dashboardProject.jpg",
-    description: "Interactive dashboard for sales and marketing data"
+    description: "Interactive dashboard for sales and marketing data",
   },
   {
     id: 2,
@@ -157,7 +169,7 @@ const projects = [
     technologies: ["html", "css", "javascript"],
     type: "Web Development",
     image: "./images/dashboardProject.jpg",
-    description: "web application for sales and marketing data"
+    description: "web application for sales and marketing data",
   },
   {
     id: 3,
@@ -166,7 +178,7 @@ const projects = [
     technologies: ["html", "css", "javascript"],
     type: "Dashboard",
     image: "./images/dashboardProject.jpg",
-    description: ""
+    description: "",
   },
   {
     id: 4,
@@ -175,7 +187,7 @@ const projects = [
     technologies: ["python", "matplotlib", "pandas"],
     type: "python",
     image: "./images/dashboardProject.jpg",
-    description: ""
+    description: "",
   },
   {
     id: 5,
@@ -184,7 +196,7 @@ const projects = [
     technologies: ["html", "css", "javascript"],
     type: "",
     image: "./images/dashboardProject.jpg",
-    description: ""
+    description: "",
   },
   {
     id: 6,
@@ -193,8 +205,8 @@ const projects = [
     technologies: ["html", "css", "javascript"],
     type: "Data Visualization",
     image: "./images/dashboardProject.jpg",
-    description: ""
-  }
+    description: "",
+  },
 ];
 
 function createCard(project) {

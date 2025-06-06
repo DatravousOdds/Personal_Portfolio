@@ -925,17 +925,24 @@ textarea:focus {
   position: fixed;
   background-color: #fff;
   top: 4rem;
+  opacity: 0;
   right: 0;
   left: 0;
   /* padding: 1rem; */
   box-shadow: var(--shadow-md);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.small-nav.active {
+  opacity: 1;
 }
 
 .small-nav ul {
   display: flex;
   flex-direction: column;
   /* gap: 1rem; */
-  list-style: none;justify-content: center;
+  list-style: none;
+  justify-content: center;
 }
 
 .small-nav ul li a {
@@ -943,7 +950,6 @@ textarea:focus {
   text-transform: capitalize;
   color: #000;
   font-weight: 600;
-
 }
 
 .small-nav ul li a:hover {
@@ -991,13 +997,21 @@ textarea:focus {
   .hero-content .stats-container {
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
   }
 
   .skills-content .grid-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     display: grid;
+  }
+
+  .projects-grid-container {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 390px) {
+  .hero-upper {
+    flex-direction: column;
+  }
 }
