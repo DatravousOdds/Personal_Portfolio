@@ -187,6 +187,8 @@ nav ul li a:hover {
 .experience-content .experience-timeline {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  align-items: start;
 }
 
 .experience-item-header {
@@ -219,6 +221,40 @@ nav ul li a:hover {
   background-color: #f9fafb;
 }
 
+.experience-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.experience-date {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  letter-spacing: 0.025;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.experience-degree {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.experience-location {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.experience-description {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
 /* Timeline indicators */
 .timeline-indicator {
   display: flex;
@@ -232,7 +268,22 @@ nav ul li a:hover {
   height: 12px;
   background-color: var(--primary-color);
   border: 2px solid #fff;
-  
+  box-shadow: 0 0 0 2px var(--primary-color);
+  border-radius: 12px;
+}
+
+.timeline-line {
+  width: 2px;
+  height: 100%;
+  background: var(--primary-color);
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color) 0%,
+    rgba(var(--primary-color-rgb, 59, 130, 246), 0.3) 100%
+  );
+  margin-top: 0.5rem;
+  max-height: 153px;
+  border-radius: 1px;
 }
 
 /* feature Projects */
@@ -249,6 +300,7 @@ nav ul li a:hover {
 .projects-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
 }
 
 .projects-grid-container .project-image img {
@@ -292,6 +344,27 @@ nav ul li a:hover {
   flex-wrap: wrap;
 }
 
+.p1 {
+  padding: 4rem 1rem;
+}
+
+.header-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* About section */
+.about-content {
+  background-color: var(--primary-color);
+}
+
+.about-header {
+  color: #fff;
+  font-size: 2rem;
+}
+
 .project-info .project-tech-stack span {
   font-size: 0.875rem;
   padding: 0.25rem 0.5rem;
@@ -299,6 +372,8 @@ nav ul li a:hover {
   background-color: #f3f4f6;
   color: #000;
   transition: 0.3s all;
+  text-transform: capitalize;
+  cursor: pointer;
 }
 
 .project-filters .filter-list li {
@@ -600,5 +675,32 @@ nav ul li a:hover {
 @media (max-width: 390px) {
   .hero-upper {
     flex-direction: column;
+  }
+
+  .skills-content .grid-container {
+    grid-template-columns: 1fr ;
+  }
+
+  .hero-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 500px;
+  }
+
+  .stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .stats {
+    max-width: 250px;
   }
 }
