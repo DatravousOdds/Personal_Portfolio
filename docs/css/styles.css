@@ -1,5 +1,3 @@
-import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
 :root {
   --font-primary: "Inter", Roboto, sans-serif;
   --primary-color: #4f46e5;
@@ -18,7 +16,12 @@ body {
   font-family: var(--font-primary);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-primary);
   line-height: 1.2;
 }
@@ -93,6 +96,49 @@ nav ul li a:hover {
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4);
 }
 
+/* Contact Modal */
+
+.modal-overlay {
+  opacity: 0;
+  position: fixed;
+}
+
+/* Success State */
+.success-state {
+  display: none;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+}
+
+/* Skill Section */
+.skills-content {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-content .skills-title {
+  font-size: 2rem;
+}
+
+.skills-content .content-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skills-content .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+
+}
+
 /* Hero Section */
 .hero {
   min-height: calc(100vh - 80px);
@@ -104,11 +150,12 @@ nav ul li a:hover {
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="%234f46e5" opacity="0.1"/></svg>') repeat;
+  background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="%234f46e5" opacity="0.1"/></svg>')
+    repeat;
   opacity: 0.5;
 }
 
@@ -173,14 +220,18 @@ nav ul li a:hover {
 }
 
 .hero-image::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
   height: 20px;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
   filter: blur(5px);
 }
 
@@ -216,8 +267,6 @@ nav ul li a:hover {
   font-weight: 500;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .reset-btn {
   padding: 1rem;
   border-radius: 8px;
@@ -251,6 +300,7 @@ nav ul li a:hover {
   background-color: #fff;
   top: 4rem;
   opacity: 0;
+  visibility: hidden;
   right: 0;
   left: 0;
   /* padding: 1rem; */
@@ -294,20 +344,10 @@ nav ul li a:hover {
   color: var(--primary-color);
 }
 
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) (0deg);
-=======
-=======
->>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
-<<<<<<< HEAD
->>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
-=======
->>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
   }
   to {
     opacity: 1;
@@ -316,7 +356,8 @@ nav ul li a:hover {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -324,7 +365,7 @@ nav ul li a:hover {
   }
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .hero-upper {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -342,11 +383,9 @@ nav ul li a:hover {
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
-<<<<<<< HEAD
   .small-screen-navigation {
     display: block;
   }
@@ -377,16 +416,8 @@ nav ul li a:hover {
   }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 @media (max-width: 390px) {
   .hero-upper {
     flex-direction: column;
   }
 }
-=======
-/* Rest of your existing CSS remains unchanged */
->>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
-=======
-/* Rest of your existing CSS remains unchanged */
->>>>>>> a618b71a7775703e1cde6907b65fd665665a2c98
