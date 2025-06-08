@@ -37,7 +37,7 @@ header {
   position: sticky;
   top: 0;
   background: white;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   z-index: 1000;
   box-shadow: var(--shadow-md);
   -webkit-box-shadow: 0 4px 15px rgba(128, 128, 128, 0.5);
@@ -104,6 +104,14 @@ a:focus,
   border: 2px solid #4f46e5;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+.web-development {
+  background-color: green;
+}
+
+.data-visualization {
+  background-color: #4f46e5;
 }
 
 /* .btn:focus {
@@ -200,6 +208,11 @@ body.modal-open {
   gap: 0.5rem;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
 
 .skill .header-icon,
@@ -359,6 +372,7 @@ body.modal-open {
   color: #fff;
   padding: 0.5rem 1rem;
   text-transform: capitalize;
+  border-radius: 8px;
 }
 
 .projects-grid-container .project-info {
@@ -399,12 +413,18 @@ body.modal-open {
 
 .about-content {
   background-color: var(--primary-color);
+  padding: 2rem 1rem;
+}
+
+.about-header .header-icon {
+  color: #fff;
 }
 
 .about-links {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  gap: 1rem;
 }
 
 .about-links .link-container a {
@@ -676,6 +696,7 @@ body.modal-open {
   background: #efeffe;
   width: 100%;
   color: var(--primary-color);
+  cursor: pointer;
 }
 
 /* Project Section */
@@ -756,7 +777,49 @@ body.modal-open {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 414px) {
+  .hero-upper {
+    flex-direction: column;
+  }
+
+  .skills-content .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-content .skill {
+    width: 100%;
+    min-width: 356px;
+  }
+
+  .hero-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 500px;
+  }
+
+  .stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stats {
+    width: 100%;
+    max-width: 356px;
+  }
+
+  .content-container {
+    flex-direction: column;
+  }
+}
+
+/* @media (max-width: 390px) {
   .hero-upper {
     flex-direction: column;
   }
@@ -795,4 +858,4 @@ body.modal-open {
   .content-container {
     flex-direction: column;
   }
-}
+} */
