@@ -30,6 +30,7 @@ contactBtn.addEventListener("click", () => {
 });
 
 modalCloseBtn.addEventListener("click", () => {
+  resetForm();
   modalOverlay.classList.remove("show");
   document.body.style.overflow = "scroll";
 });
@@ -151,6 +152,15 @@ form.addEventListener("submit", async (e) => {
     // api call
   } catch (error) {}
 });
+
+function resetForm() {
+  form.reset();
+  keys.forEach((key) => {
+    formInput[key].classList.remove("error");
+    formErrors[key].classList.remove("vaild");
+    formErrors[key].textContent = "";
+  });
+}
 
 const projects = [
   {

@@ -138,7 +138,36 @@ a:focus,
   transition: all 0.3s ease;
 }
 
-.modal-overlay.active {
+.form-group input.error,
+.form-group textarea.error {
+  background: #f7eef3;
+  border: 2px solid#e53e3e;
+}
+
+.required {
+  color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+
+.error-message.invalid {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.error-message.valid {
+  color: rgb(69, 153, 69);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-overlay.show {
   opacity: 1;
   visibility: visible;
   display: flex;
@@ -162,12 +191,15 @@ a:focus,
   margin-bottom: 1rem;
 }
 
-.modal-header .modal-title {
-  font-size: 2rem;
-  font-weight: 600;
-  font-size: 18px;
+.modal-header h2 {
+  font-weight: 700;
+  color: #4f46e5;
 }
 
+.char-count {
+  font-size: 0.875rem;
+  color: rgb(153, 153, 153);
+}
 .modal-header .modal-close-btn {
   padding: 0.5rem;
   border-radius: 6px;
@@ -203,11 +235,16 @@ a:focus,
   border: none;
   color: #fff;
   font-weight: 600;
-  letter-spacing: 1.2px;
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
+  transition: 0.3s ease-in-out;
+  box-shadow: var(--shadow-md);
+}
+
+.form-actions .primary-btn:hover {
+  transform: translateY(-5px);
 }
 
 .textarea-info {
@@ -228,6 +265,7 @@ textarea {
   padding-bottom: 1rem;
   font-weight: 500;
   line-height: 1.5;
+  color: rgb(133, 131, 131);
 }
 
 .form-group i {
@@ -797,6 +835,28 @@ body.modal-open {
   padding: 1rem;
 }
 
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spin 1s linear infinite;
+}
+
+.loading .loading-spinner {
+  opacity: 1;
+}
+
+.loading .btn-text {
+  opacity: 0;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -815,6 +875,15 @@ body.modal-open {
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
