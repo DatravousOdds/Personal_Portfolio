@@ -50,21 +50,21 @@ const formInput = {
   name: document.getElementById("contact-name"),
   email: document.getElementById("contact-email"),
   subject: document.getElementById("contact-subject"),
-  message: document.getElementById("contact-message"),
+  message: document.getElementById("contact-message")
 };
 
 const formErrors = {
   name: document.getElementById("name-error"),
   email: document.getElementById("email-error"),
   subject: document.getElementById("subject-error"),
-  message: document.getElementById("message-error"),
+  message: document.getElementById("message-error")
 };
 
 const successMessage = {
   name: "Looks good!",
   email: "Valid!",
   subject: "Looks good!",
-  message: "That's enough!",
+  message: "That's enough!"
 };
 
 validators = {
@@ -88,7 +88,7 @@ validators = {
     if (value.length < 10) return "Message must be at lease 10 characters";
     if (value.length > 1000) return "Message must be less than 1000 characters";
     return null;
-  },
+  }
 };
 
 const keys = Object.keys(formInput);
@@ -171,6 +171,7 @@ const projects = [
     type: "Data Visualization",
     image: "./images/dashboardProject.jpg",
     description: "Interactive dashboard for sales and marketing data",
+    link: ""
   },
   {
     id: 2,
@@ -180,6 +181,7 @@ const projects = [
     type: "Web Development",
     image: "./images/dashboardProject.jpg",
     description: "web application for sales and marketing data",
+    link: ""
   },
   {
     id: 3,
@@ -187,8 +189,9 @@ const projects = [
     category: "web-apps",
     technologies: ["html", "css", "javascript"],
     type: "Dashboard",
-    image: "./images/dashboardProject.jpg",
+    image: "./images/projects/H2T_Cover.png",
     description: "",
+    link: "https://datravousodds.github.io/H2T-landing-page/"
   },
   {
     id: 4,
@@ -197,16 +200,16 @@ const projects = [
     technologies: ["python", "matplotlib", "pandas"],
     type: "python",
     image: "./images/dashboardProject.jpg",
-    description: "",
+    description: ""
   },
   {
     id: 5,
     title: "Python Project",
     category: "python",
     technologies: ["html", "css", "javascript"],
-    type: "",
+    type: "python",
     image: "./images/dashboardProject.jpg",
-    description: "",
+    description: ""
   },
   {
     id: 6,
@@ -215,8 +218,8 @@ const projects = [
     technologies: ["html", "css", "javascript"],
     type: "Data Visualization",
     image: "./images/dashboardProject.jpg",
-    description: "",
-  },
+    description: ""
+  }
 ];
 
 function createCard(project) {
@@ -231,7 +234,7 @@ function createCard(project) {
       ${project.type}
     </div>
     <div class="project-image">
-      <a href="/projects/sales-marketing-dashboard">
+      <a href="${project.link}">
       <img src="${project.image}" alt="Project Image" />
       </a>
     </div>

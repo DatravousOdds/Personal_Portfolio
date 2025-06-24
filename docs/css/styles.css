@@ -722,6 +722,7 @@ body.modal-open {
 }
 
 /* Hero Section */
+
 .hero {
   min-height: calc(100vh - 80px);
   display: flex;
@@ -849,6 +850,8 @@ body.modal-open {
   font-weight: 500;
 }
 
+/**/
+
 .reset-btn {
   padding: 1rem;
   border-radius: 8px;
@@ -870,6 +873,8 @@ body.modal-open {
   font-size: 1.5rem;
   color: var(--primary-color);
 }
+
+/* Small Screen navigation */
 
 .small-screen-navigation {
   font-size: 1.5rem;
@@ -934,6 +939,7 @@ body.modal-open {
 
 .projects-content {
   padding: 2rem;
+  background-color: #f9fafc;
 }
 
 .loading-spinner {
