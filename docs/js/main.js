@@ -185,10 +185,10 @@ const projects = [
   },
   {
     id: 3,
-    title: "",
+    title: "H2T Ecommerce Landing Page",
     category: "web-apps",
     technologies: ["html", "css", "javascript"],
-    type: "Dashboard",
+    type: "Web Development",
     image: "./images/projects/H2T_Cover.png",
     description: "",
     link: "https://datravousodds.github.io/H2T-landing-page/"
