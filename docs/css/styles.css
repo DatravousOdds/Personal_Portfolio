@@ -1186,6 +1186,27 @@ body.modal-open {
   }
 }
 
+@media (prefers-reduced-motion) {
+  .hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
+
+  .show {
+    animation: slideInOnce 1s ease-out forwards;
+  }
+
+  @keyframes slideInOnce {
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(0);
+    }
+  }
+}
+
 /* @media (max-width: 390px) {
   .hero-upper {
     flex-direction: column;

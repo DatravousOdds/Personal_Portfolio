@@ -50,21 +50,21 @@ const formInput = {
   name: document.getElementById("contact-name"),
   email: document.getElementById("contact-email"),
   subject: document.getElementById("contact-subject"),
-  message: document.getElementById("contact-message")
+  message: document.getElementById("contact-message"),
 };
 
 const formErrors = {
   name: document.getElementById("name-error"),
   email: document.getElementById("email-error"),
   subject: document.getElementById("subject-error"),
-  message: document.getElementById("message-error")
+  message: document.getElementById("message-error"),
 };
 
 const successMessage = {
   name: "Looks good!",
   email: "Valid!",
   subject: "Looks good!",
-  message: "That's enough!"
+  message: "That's enough!",
 };
 
 validators = {
@@ -88,7 +88,7 @@ validators = {
     if (value.length < 10) return "Message must be at lease 10 characters";
     if (value.length > 1000) return "Message must be less than 1000 characters";
     return null;
-  }
+  },
 };
 
 const keys = Object.keys(formInput);
@@ -171,7 +171,7 @@ const projects = [
     type: "Data Visualization",
     image: "./images/dashboardProject.jpg",
     description: "Interactive dashboard for sales and marketing data",
-    link: ""
+    link: "",
   },
   {
     id: 2,
@@ -181,7 +181,7 @@ const projects = [
     type: "Web Development",
     image: "./images/dashboardProject.jpg",
     description: "web application for sales and marketing data",
-    link: ""
+    link: "",
   },
   {
     id: 3,
@@ -191,7 +191,7 @@ const projects = [
     type: "Web Development",
     image: "./images/projects/H2T_Cover.png",
     description: "",
-    link: "https://datravousodds.github.io/H2T-landing-page/"
+    link: "https://datravousodds.github.io/H2T-landing-page/",
   },
   {
     id: 4,
@@ -200,7 +200,7 @@ const projects = [
     technologies: ["python", "matplotlib", "pandas"],
     type: "python",
     image: "./images/dashboardProject.jpg",
-    description: ""
+    description: "",
   },
   {
     id: 5,
@@ -209,7 +209,7 @@ const projects = [
     technologies: ["html", "css", "javascript"],
     type: "python",
     image: "./images/dashboardProject.jpg",
-    description: ""
+    description: "",
   },
   {
     id: 6,
@@ -218,8 +218,8 @@ const projects = [
     technologies: ["html", "css", "javascript"],
     type: "Data Visualization",
     image: "./images/dashboardProject.jpg",
-    description: ""
-  }
+    description: "",
+  },
 ];
 
 function createCard(project) {
@@ -277,7 +277,7 @@ filterList.forEach((btn) => {
 });
 
 function filterProjects(filterValue) {
-  let filteredProjects;
+  let filteredProjects = null;
   if (filterValue === "all") {
     // Get all projects
     filteredProjects = projects;
@@ -285,7 +285,37 @@ function filterProjects(filterValue) {
     filteredProjects = projects.filter((project) => {
       return project.category === filterValue;
     });
-
-    displayProjects(filteredProjects);
   }
+
+  displayProjects(filteredProjects);
 }
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+const valueDisplays = document.querySelectorAll(".stat-count");
+let interval = 2000;
+
+hiddenElements.forEach((el) => observer.observe(el));
+valueDisplays.forEach((valueDisplay) => {
+  console.log(valueDisplay.getAttribute("data-value"));
+  let start = 0;
+  let end = parseInt(valueDisplay.getAttribute("data-value"));
+  let duration = Math.floor(interval / end);
+  console.log("duration:", duration);
+  let counter = setInterval(() => {
+    start += 1;
+    valueDisplay.textContent = start;
+    if (start == end) {
+      clearInterval(counter);
+    }
+  }, duration);
+});
