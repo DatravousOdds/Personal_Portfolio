@@ -189,7 +189,7 @@ const projects = [
     image: "./images/Marketplace.PNG",
     githubUrl: "https://github.com/DatravousOdds/H2T-Ecommerce-App",
     description:
-      "A full-stack e-commerce platform built with JavaScript, Node.js, Express.js, and Firebase. This all-in-one marketplace connects sneaker and streetwear enthusiasts, allowing users to buy, sell, and trade vintage and streetwear products.",
+      "A full-stack e-commerce platform built with JavaScript, Node.js, Express.js",
   },
   {
     id: 3,
