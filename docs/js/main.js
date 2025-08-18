@@ -175,13 +175,21 @@ const projects = [
   },
   {
     id: 2,
-    title: "Web Development Application",
+    title: "H2T E-commerce Marketplace",
     category: "web-apps",
-    technologies: ["html", "css", "javascript"],
+    technologies: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase",
+      "Node.js",
+      "Express.js",
+    ],
     type: "Web Development",
-    image: "./images/dashboardProject.jpg",
-    description: "web application for sales and marketing data",
-    link: "",
+    image: "./images/Marketplace.PNG",
+    githubUrl: "https://github.com/DatravousOdds/H2T-Ecommerce-App",
+    description:
+      "A full-stack e-commerce platform built with JavaScript, Node.js, Express.js, and Firebase. This all-in-one marketplace connects sneaker and streetwear enthusiasts, allowing users to buy, sell, and trade vintage and streetwear products.",
   },
   {
     id: 3,
@@ -191,7 +199,7 @@ const projects = [
     type: "Web Development",
     image: "./images/projects/H2T_Cover.png",
     description: "",
-    link: "https://datravousodds.github.io/H2T-landing-page/",
+    githubUrl: "https://datravousodds.github.io/H2T-landing-page/",
   },
   {
     id: 4,
@@ -210,6 +218,7 @@ const projects = [
     type: "python",
     image: "./images/dashboardProject.jpg",
     description: "",
+    githubUrl: "",
   },
   {
     id: 6,
@@ -227,11 +236,19 @@ function createCard(project) {
   const card = document.createElement("div");
   card.className = "project-wrapper";
   card.innerHTML = `
-    <div class="project-type ${project.type
-      .split(" ")
-      .join("-")
-      .toLowerCase()}">
-      ${project.type}
+    <div class="project-link">
+        <ul>
+          <li>
+            <a href="${project.githubUrl}" target="_blank">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href="${project.githubUrl}" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+        </ul>
     </div>
     <div class="project-image">
       <a href="${project.link}">
@@ -239,8 +256,17 @@ function createCard(project) {
       </a>
     </div>
     <div class="project-info">
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
+    <div class="project-header">
+    <h3>${project.title}</h3>
+      <div class="project-type ${project.type
+        .split(" ")
+        .join("-")
+        .toLowerCase()}">
+      ${project.type}
+      </div>
+    </div>
+      
+      <p class="project-description">${project.description}</p>
       <div class="project-tech-stack">
         ${project.technologies.map((tech) => `<span>${tech}</span>`).join("")}
       </div>
@@ -273,6 +299,11 @@ filterList.forEach((btn) => {
     const value = btn.textContent.split(" ").join("-").toLowerCase();
     console.log(value);
     filterProjects(value);
+    if (btn) {
+      filterList.forEach((btn) => btn.classList.remove("active"));
+      btn.classList.add("active");
+      console.log(btn);
+    }
   });
 });
 
