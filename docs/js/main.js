@@ -50,21 +50,21 @@ const formInput = {
   name: document.getElementById("contact-name"),
   email: document.getElementById("contact-email"),
   subject: document.getElementById("contact-subject"),
-  message: document.getElementById("contact-message"),
+  message: document.getElementById("contact-message")
 };
 
 const formErrors = {
   name: document.getElementById("name-error"),
   email: document.getElementById("email-error"),
   subject: document.getElementById("subject-error"),
-  message: document.getElementById("message-error"),
+  message: document.getElementById("message-error")
 };
 
 const successMessage = {
   name: "Looks good!",
   email: "Valid!",
   subject: "Looks good!",
-  message: "That's enough!",
+  message: "That's enough!"
 };
 
 validators = {
@@ -88,7 +88,7 @@ validators = {
     if (value.length < 10) return "Message must be at lease 10 characters";
     if (value.length > 1000) return "Message must be less than 1000 characters";
     return null;
-  },
+  }
 };
 
 const keys = Object.keys(formInput);
@@ -164,32 +164,23 @@ function resetForm() {
 
 const projects = [
   {
-    id: 1,
-    title: "Sales and Marketing Dashboard",
-    category: "dashboards",
-    technologies: ["tableau", "power bi", "javascript"],
-    type: "Data Visualization",
-    image: "./images/dashboardProject.jpg",
-    description: "Interactive dashboard for sales and marketing data",
-    link: "",
-  },
-  {
     id: 2,
     title: "H2T E-commerce Marketplace",
     category: "web-apps",
     technologies: [
       "HTML",
-      "CSS",
+      "CSS3",
       "Javascript",
       "Firebase",
       "Node.js",
-      "Express.js",
+      "Express.js"
     ],
     type: "Web Development",
     image: "./images/Marketplace.PNG",
     githubUrl: "https://github.com/DatravousOdds/H2T-Ecommerce-App",
+    liveUrl: "",
     description:
-      "A full-stack e-commerce platform built with JavaScript, Node.js, Express.js",
+      "A full-stack e-commerce platform built with JavaScript, Node.js, Express.js"
   },
   {
     id: 3,
@@ -200,35 +191,8 @@ const projects = [
     image: "./images/projects/H2T_Cover.png",
     description: "",
     githubUrl: "https://datravousodds.github.io/H2T-landing-page/",
-  },
-  {
-    id: 4,
-    title: "Data Visualization Tool",
-    category: "data-viz",
-    technologies: ["python", "matplotlib", "pandas"],
-    type: "python",
-    image: "./images/dashboardProject.jpg",
-    description: "",
-  },
-  {
-    id: 5,
-    title: "Python Project",
-    category: "python",
-    technologies: ["html", "css", "javascript"],
-    type: "python",
-    image: "./images/dashboardProject.jpg",
-    description: "",
-    githubUrl: "",
-  },
-  {
-    id: 6,
-    title: "Data Visualization",
-    category: "data-viz",
-    technologies: ["html", "css", "javascript"],
-    type: "Data Visualization",
-    image: "./images/dashboardProject.jpg",
-    description: "",
-  },
+    liveUrl: ""
+  }
 ];
 
 function createCard(project) {
@@ -290,7 +254,7 @@ function displayProjects(projectsToShow) {
   }, 500);
 }
 
-// displayProjects(projects);
+displayProjects(projects);
 
 // Featuer project filter
 
@@ -308,7 +272,8 @@ filterList.forEach((btn) => {
 });
 
 function filterProjects(filterValue) {
-  let filteredProjects = null;
+  console.log(filterValue);
+  let filteredProjects = projects;
   if (filterValue === "all") {
     // Get all projects
     filteredProjects = projects;
