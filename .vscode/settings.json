@@ -1,6 +1,16 @@
 {
-    "cSpell.words": [
-        "Datravous"
-    ],
-    "liveServer.settings.port": 5501
+  "cSpell.words": ["Datravous"],
+  "liveServer.settings.port": 5501,
+  "sqltools.connections": [
+    {
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "contact_msg",
+      "database": "portfolio_db",
+      "username": "postgres"
+    }
+  ]
 }

@@ -50,21 +50,21 @@ const formInput = {
   name: document.getElementById("contact-name"),
   email: document.getElementById("contact-email"),
   subject: document.getElementById("contact-subject"),
-  message: document.getElementById("contact-message")
+  message: document.getElementById("contact-message"),
 };
 
 const formErrors = {
   name: document.getElementById("name-error"),
   email: document.getElementById("email-error"),
   subject: document.getElementById("subject-error"),
-  message: document.getElementById("message-error")
+  message: document.getElementById("message-error"),
 };
 
 const successMessage = {
   name: "Looks good!",
   email: "Valid!",
   subject: "Looks good!",
-  message: "That's enough!"
+  message: "That's enough!",
 };
 
 validators = {
@@ -88,7 +88,7 @@ validators = {
     if (value.length < 10) return "Message must be at lease 10 characters";
     if (value.length > 1000) return "Message must be less than 1000 characters";
     return null;
-  }
+  },
 };
 
 const keys = Object.keys(formInput);
@@ -145,12 +145,35 @@ form.addEventListener("submit", async (e) => {
   });
   if (hasErrors) return;
 
+  const formData = new FormData(e.target);
+  // console.log(formData);
+  const data = Object.fromEntries(formData);
+  // console.log("data", data);
   submitBtn.classList.add("loading");
   submitBtn.disabled = true;
 
+  console.log("Data being sent:", data);
+
   try {
     // api call
-  } catch (error) {}
+    const response = await fetch("/submit-contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.status == 200) {
+      console.log("error sending request");
+    }
+
+    const result = await response.json();
+    console.log(result);
+    submitBtn.classList.remove("loading");
+    submitBtn.disabled = false;
+    modalOverlay.classList.remove("show");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 function resetForm() {
@@ -173,14 +196,14 @@ const projects = [
       "Javascript",
       "Firebase",
       "Node.js",
-      "Express.js"
+      "Express.js",
     ],
     type: "Web Development",
     image: "./images/Marketplace.PNG",
     githubUrl: "https://github.com/DatravousOdds/H2T-Ecommerce-App",
     liveUrl: "",
     description:
-      "A full-stack e-commerce platform built with JavaScript, Node.js, Express.js"
+      "A full-stack e-commerce platform built with JavaScript, Node.js, Express.js",
   },
   {
     id: 3,
@@ -191,8 +214,8 @@ const projects = [
     image: "./images/projects/H2T_Cover.png",
     description: "",
     githubUrl: "https://datravousodds.github.io/H2T-landing-page/",
-    liveUrl: ""
-  }
+    liveUrl: "",
+  },
 ];
 
 function createCard(project) {
