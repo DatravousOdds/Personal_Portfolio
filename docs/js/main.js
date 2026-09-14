@@ -188,7 +188,7 @@ function resetForm() {
 const projects = [
   {
     id: 2,
-    title: "H2T E-commerce Marketplace",
+    title: "Hexxo Marketplace",
     category: "web-apps",
     technologies: [
       "HTML",
@@ -199,9 +199,9 @@ const projects = [
       "Express.js",
     ],
     type: "Web Development",
-    image: "./images/Marketplace.PNG",
+    image: "./images/projects/Hexxo_App.png",
     githubUrl: "https://github.com/DatravousOdds/H2T-Ecommerce-App",
-    liveUrl: "",
+    liveUrl: "https://www.hexxo.store/",
     description:
       "A full-stack e-commerce platform built with JavaScript, Node.js, Express.js",
   },
