@@ -214,7 +214,67 @@ const projects = [
     image: "./images/projects/H2T_Cover.png",
     description: "",
     githubUrl: "https://datravousodds.github.io/H2T-landing-page/",
-    liveUrl: "",
+    liveUrl: "https://datravousodds.github.io/H2T-landing-page/",
+  },
+  {
+    id: 4,
+    title : "Javascript Intermediate Certification",
+    category: "certificates",
+    technologies: ["javascript"],
+    type: "Web Development Certification",
+    image: "./images/certifications/javascript_inter_cert.png",
+    description: "Javascript cerification that allowed me to learn the intermediate skills and how its used in the web",
+    githubUrl: "https://www.sololearn.com/certificates/CC-C9G6DHTM",
+    liveUrl: "https://www.sololearn.com/certificates/CC-C9G6DHTM"
+
+  },
+  {
+    id: 5,
+    title : "Javascript Certification",
+    category: "certificates",
+    technologies: ["javascript"],
+    type: "Web Development Certification",
+    image: "./images/certifications/javascript.png",
+    description: "Javascript cerification that allowed me to learn the fundementals and how its used in the web",
+    githubUrl: "https://www.sololearn.com/certificates/CT-JT5CKNIS",
+    liveUrl: "https://www.sololearn.com/certificates/CT-JT5CKNIS"
+
+  },
+  {
+    id: 6,
+    title : "Intro to Python Certification",
+    category: "certificates",
+    technologies: ["python"],
+    type: "Web Development Certification",
+    image: "./images/certifications/intro_python_cert.png",
+    description: "Python cerification that allowed me to learn the fundementals and how its used in the web",
+    githubUrl: "https://www.sololearn.com/certificates/CC-IOGZTDHF",
+    liveUrl: "https://www.sololearn.com/certificates/CC-IOGZTDHF"
+
+  },
+  {
+    id: 7,
+    title : "ATC company website",
+    category: "web-apps",
+    technologies: ["html", "CSS3", "Javascript", "NodeJS", "Express", "PostgresSQL"],
+    type: "Web Development",
+    image: "./images/projects/ATC_Website.png",
+    description: "Company website descripting company processes, services, project, and more",
+    githubUrl: "https://www.americantraffictx.com/",
+    liveUrl: "https://www.americantraffictx.com/"
+
+  },
+  {
+    id: 8,
+    title : "ATC Analytics Dashboard",
+    category: "dashboards",
+    technologies: ["Python", "SQL", "ETL", "Postgres", "Dashboard", "Chart.js"],
+    type: "Data Analytics",
+    image: "./images/projects/ATC_Dashboard.png",
+    description: "Analytical dashboard with a built-in ETL process that ingests, transforms, and visualizes company data for reporting and decision-making",
+    githubUrl: "https://www.americantraffictx.info/",
+    liveUrl: "https://www.americantraffictx.info/"
+
   },
 ];
 
@@ -226,19 +286,19 @@ function createCard(project) {
     <div class="project-link">
         <ul>
           <li>
-            <a href="${project.githubUrl}" target="_blank">
+            <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </li>
           <li>
-            <a href="${project.githubUrl}" target="_blank">
+            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-github"></i>
             </a>
           </li>
         </ul>
     </div>
     <div class="project-image">
-      <a href="${project.link}">
+      <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer">
       <img src="${project.image}" alt="Project Image" />
       </a>
     </div>
@@ -252,14 +312,21 @@ function createCard(project) {
       ${project.type}
       </div>
     </div>
-      
+
       <p class="project-description">${project.description}</p>
       <div class="project-tech-stack">
         ${project.technologies.map((tech) => `<span>${tech}</span>`).join("")}
       </div>
     </div>
-            
+
     `;
+
+  if (project.liveUrl) {
+    card.addEventListener("click", (event) => {
+      if (event.target.closest("a")) return;
+      window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+    });
+  }
 
   return card;
 }
