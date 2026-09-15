@@ -223,7 +223,7 @@ const projects = [
     technologies: ["javascript"],
     type: "Web Development Certification",
     image: "./images/certifications/javascript_inter_cert.png",
-    description: "Javascript cerification that allowed me to learn the intermediate skills and how its used in the web",
+    description: "Javascript certification that allowed me to learn the intermediate skills and how its used in the web",
     githubUrl: "https://www.sololearn.com/certificates/CC-C9G6DHTM",
     liveUrl: "https://www.sololearn.com/certificates/CC-C9G6DHTM"
 
@@ -235,7 +235,7 @@ const projects = [
     technologies: ["javascript"],
     type: "Web Development Certification",
     image: "./images/certifications/javascript.png",
-    description: "Javascript cerification that allowed me to learn the fundementals and how its used in the web",
+    description: "Javascript certification that allowed me to learn the fundementals and how its used in the web",
     githubUrl: "https://www.sololearn.com/certificates/CT-JT5CKNIS",
     liveUrl: "https://www.sololearn.com/certificates/CT-JT5CKNIS"
 
@@ -247,7 +247,7 @@ const projects = [
     technologies: ["python"],
     type: "Web Development Certification",
     image: "./images/certifications/intro_python_cert.png",
-    description: "Python cerification that allowed me to learn the fundementals and how its used in the web",
+    description: "Python certification that allowed me to learn the fundementals and how its used in the web",
     githubUrl: "https://www.sololearn.com/certificates/CC-IOGZTDHF",
     liveUrl: "https://www.sololearn.com/certificates/CC-IOGZTDHF"
 
@@ -259,7 +259,7 @@ const projects = [
     technologies: ["html", "CSS3", "Javascript", "NodeJS", "Express", "PostgresSQL"],
     type: "Web Development",
     image: "./images/projects/ATC_Website.png",
-    description: "Company website descripting company processes, services, project, and more",
+    description: "Company website description company processes, services, project, and more",
     githubUrl: "https://www.americantraffictx.com/",
     liveUrl: "https://www.americantraffictx.com/"
 
